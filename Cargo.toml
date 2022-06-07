@@ -1,0 +1,10 @@
+[package]
+name = "m34wq_kvm_switch"
+version = "0.0.1"
+build = "build.rs"
+
+[dependencies]
+hidapi = "1.3.3"
+
+[build-dependencies]
+winres = "0.1"
