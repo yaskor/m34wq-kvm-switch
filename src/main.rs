@@ -2,9 +2,11 @@
 extern crate hidapi;
 
 fn main() {
-    let api = hidapi::HidApi::new().unwrap();
-    let (vid, pid) = (3034, 4352);
-    let device = api.open(vid, pid).unwrap();
+    const VID: u16 = 3034;
+    const PID: u16 = 4352;
+
+    let api = hidapi::HidApi::new().expect("Failed to create hidapi instance");
+    let device = api.open(VID, PID).expect("Failed to open usb device");
     let buf = [
         0, 64, 198, 0, 0, 0, 0, 32, 0, 110, 0, 128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -14,5 +16,5 @@ fn main() {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ];
-    device.write(&buf).unwrap();
+    device.write(&buf).expect("Failed to write to device");
 }

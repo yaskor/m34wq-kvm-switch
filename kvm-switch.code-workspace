@@ -1,8 +1,9 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {}
+	"folders": [{"path": "."}],
+	"settings": {},
+	"extensions": {
+		"recommendations": [
+			"1yib.rust-bundle",
+		]
+	}
 }
