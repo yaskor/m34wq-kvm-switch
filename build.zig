@@ -16,14 +16,11 @@ pub fn build(b: *std.Build) void {
             .link_libc = true,
         }),
     });
-
     exe.subsystem = .Windows;
-
     exe.root_module.addCSourceFile(.{
-        .file = b.path("app.rc"),
+        .file = b.path("resource.rc"),
         .flags = &.{},
     });
-
     exe.root_module.addIncludePath(hidapi.path("hidapi"));
     exe.root_module.addCSourceFile(.{
         .file = hidapi.path("windows/hid.c"),
