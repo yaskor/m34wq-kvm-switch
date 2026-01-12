@@ -1,7 +1,7 @@
 .{
     .name = .m34wq_kvm_switch,
     .version = "0.0.0",
-    .fingerprint = 0xcad8997e4b65978b, // Changing this has security and trust implications.
+    .fingerprint = 0xcad8997e4b65978b,
     .minimum_zig_version = "0.16.0-dev.2145+ec25b1384",
     .dependencies = .{
         .hidapi = .{
