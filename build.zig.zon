@@ -1,0 +1,17 @@
+.{
+    .name = .m34wq_kvm_switch,
+    .version = "0.0.0",
+    .fingerprint = 0xcad8997e4b65978b, // Changing this has security and trust implications.
+    .minimum_zig_version = "0.16.0-dev.2145+ec25b1384",
+    .dependencies = .{
+        .hidapi = .{
+            .url = "https://github.com/libusb/hidapi/archive/refs/tags/hidapi-0.14.0.tar.gz",
+            .hash = "N-V-__8AAEmNHADUULznNvehrGQhBYe48h1xO8hQCt-2czoZ",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
